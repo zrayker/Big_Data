@@ -471,7 +471,7 @@ select
 	count(case when Store_and_fwd_flag = 'Y' then 1 else null end),
  	count(case when Store_and_fwd_flag = 'N' then 1 else null end),	
 	MONTH(yr.tpep_pickup_datetime)
-from yellow_raw yr GROUP BY yr.VendorID, MONTH(yr.tpep_pickup_datetime);</sql>
+from yellow_raw yr WHERE MONTH(yr.tpep_pickup_datetime) IS NOT NULL GROUP BY yr.VendorID, MONTH(yr.tpep_pickup_datetime);</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -619,7 +619,7 @@ select
 	count(case when trip_type = 1 then 1 else null end),
  	count(case when trip_type = 2 then 1 else null end),		
 	MONTH(gr.lpep_pickup_datetime)
-from green_raw gr GROUP BY gr.VendorID, MONTH(gr.lpep_pickup_datetime);</sql>
+from green_raw gr WHERE MONTH(gr.lpep_pickup_datetime) IS NOT NULL GROUP BY gr.VendorID, MONTH(gr.lpep_pickup_datetime);</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

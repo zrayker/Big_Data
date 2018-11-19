@@ -750,7 +750,8 @@
 	negotiated_fare,
 	group_ride,
 	SaF,
-	no_SaF
+	no_SaF,
+	tmonth
 FROM yellow_part
 </sql>
     <limit>24</limit>
@@ -817,7 +818,8 @@ FROM yellow_part
 	SaF,
 	no_SaF,
 	street_hail,
-	dispatch
+	dispatch,
+	tmonth
 FROM green_part
 </sql>
     <limit>24</limit>

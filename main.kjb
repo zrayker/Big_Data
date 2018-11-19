@@ -534,27 +534,12 @@
       <run_configuration>Pentaho local</run_configuration>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
-        <parameter>
-          <name>day</name>
-          <stream_name/>
-          <value>${load_day}</value>
-        </parameter>
-        <parameter>
-          <name>month</name>
-          <stream_name/>
-          <value>${load_month}</value>
-        </parameter>
-        <parameter>
-          <name>year</name>
-          <stream_name/>
-          <value>${load_year}</value>
-        </parameter>
       </parameters>
       <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
-      <nr>1</nr>
-      <xloc>864</xloc>
+      <nr>0</nr>
+      <xloc>880</xloc>
       <yloc>144</yloc>
     </entry>
   </entries>
@@ -581,33 +566,6 @@
       <from>raw_to_final</from>
       <to>Abort job Main </to>
       <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>raw_to_final</from>
-      <to>export</to>
-      <from_nr>0</from_nr>
-      <to_nr>1</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>export</from>
-      <to>Cleanup</to>
-      <from_nr>1</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>export</from>
-      <to>Abort job Main </to>
-      <from_nr>1</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
@@ -648,6 +606,33 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>raw_to_final</from>
+      <to>export</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>export</from>
+      <to>Cleanup</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>export</from>
+      <to>Abort job Main </to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
